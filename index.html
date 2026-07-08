@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Stopwatch - SkillCraft Task 2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stopwatch">
+  <div class="header">
+    <h1>⏱️ Pro Stopwatch</h1>
+    <button class="theme-btn" id="themeBtn">🌙</button>
+  </div>
+
+  <div class="display" id="display">
+    00:00<span class="ms">.00</span>
+  </div>
+  
+  <div class="current-lap" id="currentLap"></div>
+
+  <div class="controls">
+    <button class="btn btn-start" id="startStopBtn">Start</button>
+    <button class="btn btn-lap" id="lapBtn" disabled>Lap</button>
+    <button class="btn btn-reset" id="resetBtn" disabled>Reset</button>
+    <button class="btn" id="exportBtn" style="background: var(--text-primary);" disabled>Export</button>
+  </div>
+
+  <button class="export-btn" id="exportBtnMobile" onclick="exportCSV()">📥 Export Laps to CSV</button>
+
+  <div class="laps-wrapper">
+    <div class="lap-header" id="lapHeader" style="display:none;">
+      <span>Lap</span>
+      <span>Split</span>
+      <span style="text-align:right;">Total</span>
+    </div>
+    <div id="lapsList">
+      <div class="empty-laps">Press Lap to record your first lap</div>
+    </div>
+  </div>
+
+  <div class="legend" id="legend" style="display:none;">
+    <div class="legend-item">
+      <div class="legend-dot" style="background: var(--green);"></div>
+      <span>Fastest</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background: var(--red);"></div>
+      <span>Slowest</span>
+    </div>
+  </div>
+
+  <p class="shortcuts">Shortcuts: Space = Start/Stop | L = Lap | R = Reset</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
